@@ -11,19 +11,19 @@ def main():
     
     #this is to work with python dictionaries (or hashmaps)
     workouts = {
-        1:{'type':'Full Body','searchkey':'21519'}, 
-        2:{'type':'Full Booty','searchkey':'5085'},
-        3:{'type':'Easy Cardio','searchkey':'53214'},
-        4:{'type':'High Intensity Intervals','searchkey':'28224'},
-        5:{'type':'Body pump','searchkey':'53263'},
-        6:{'type':'Tabata','searchkey':'53684'}
+        1:{'type':'Full Body','searchkey':'F9PXg7NeVP0'}, 
+        2:{'type':'Full Booty','searchkey':'HeolReSa5ic'},
+        3:{'type':'Easy Cardio','searchkey':'PvEnWsPrL4w'},
+        4:{'type':'High Intensity Intervals','searchkey':'d9ICqoo8ze8'},
+        5:{'type':'Body pump','searchkey':'-5ztdzyQkSQ'},
+        6:{'type':'Tabata','searchkey':'d8BFKmkmxV4'}
     }
     printString = ""
     for i in range(1,len(workouts)+1):
         printString += str(i) + " : " + str(workouts[i]['type']) + "\n"
     workoutType = int(input("Using the number, what kind of workout would you like to do?\n" + printString))
     if workoutType in workouts:
-        print("Here's your Assyrian motivation for the " + workouts[workoutType]['type'] + " workout: \n" + getUrl(workouts[workoutType]))
+        print("Here's your Video for the " + workouts[workoutType]['type'] + " workout: \n" + getUrl(workouts[workoutType]))
     else:
         print("Invalid workout number input. Try again. buhbye")
         exit(1)
@@ -41,8 +41,8 @@ def checkIfDayIsValid(inputString):
     return False
 
 def getUrl(workout):
-    urlPrefix = "http://sargonsays.com/searchkey"
-    return urlPrefix + "/" + workout['searchkey']
+    urlPrefix = "https://www.youtube.com/watch"
+    return urlPrefix + "?v=" + workout['searchkey']
 
 
 if __name__ == "__main__":
